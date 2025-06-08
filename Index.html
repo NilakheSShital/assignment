@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOGO Heading</title>
+  <style>
+    .bogo-heading {
+        width: 500px;
+        margin: auto;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .bogo-heading::before,
+    .bogo-heading::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 10px;
+    }
+
+    .bogo-heading span {
+      color: #f77ca3;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .box {
+        
+        width: 500px;
+      border: 2px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      margin: auto;
+      
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .discount {
+        
+      background-color: #f77ca3;
+      color: white;
+      font-size: 14px;
+      padding: 2px 8px;
+      border-radius: 2px;
+    
+    }
+    .option-box {
+        width: 500px;
+        margin: auto;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .option-box.active {
+      border-color: #ff69b4;
+      background-color: #fff0f5;
+    }
+
+    .option-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option-header .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .discount {
+      background-color: #ffb6c1;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .most-popular {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #ff4081;
+      color: white;
+      padding: 2px 8px;
+      font-size: 10px;
+      border-radius: 12px;
+    }
+
+    .price {
+      text-align: right;
+    }
+
+    .price del {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .dropdowns {
+      margin-top: 16px;
+    }
+
+    .dropdown-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .dropdown-row label {
+      display: block;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    select {
+      width: 40%;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .dropdown-group {
+      flex: 1;
+    }
+    .footer {
+        width: 500px;
+        margin: auto;
+      color: #f06292;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .total {
+        width: 500px;
+        margin: auto;
+      text-align: right;
+      font-weight: bold;
+      /* margin-top: 5px; */
+    }
+
+  
+
+    .btn {
+      border:1px;
+      width: 500px;
+      background: #ff4081;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+    .powered {
+        width: 500px;
+        margin: auto;
+      font-size: 10px;
+      text-align: right;
+      margin-top: 5px;
+      color: gray;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="bogo-heading">
+    <span>YAY! It's BOGO</span>
+  </div>
+  <div class="box" onclick="selectBox(1)">
+    <div class="left">
+      <input type="radio" name="unit" checked id="unit1">
+       <span class="custom-radio"></span>
+      <label for="unit1"><strong>1 Unit</strong></label><br />
+      <div class="discount">10% Off</div>
+     
+    </div>
+    <div class="price">
+      <strong>$10.00 USD</strong><br>
+      <del>$24.00 USD</del>
+    </div>
+    
+  </div>
+  
+  <div id="unit2" class="option-box" onclick="selectOption('2')">
+    <div class="most-popular">MOST POPULAR</div>
+    <div class="option-header">
+      <div class="left">
+        <input type="radio" name="unit" id="radio2" onclick="selectOption('2')" />
+        <label for="radio2" style="font-weight: bold;">2 Unit</label>
+        <span class="discount">20% Off</span>
+      </div>
+      <div class="price">
+        <div style="font-weight: bold;">$18.00 USD</div>
+        <del>$24.00 USD</del>
+      </div>
+    </div>
+    <div class="dropdowns" id="dropdowns2" style="display: none;">
+        <div class="dropdown-row">
+          <div class="dropdown-group">
+            <label>#1 Size</label>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div class="dropdown-group">
+            <label>#1 Colour</label>
+            <select>
+              <option>Black</option>
+              <option>Red</option>
+              <option>Blue</option>
+            </select>
+          </div>
+        </div>
+        <div class="dropdown-row">
+          <div class="dropdown-group">
+            <label>#2 Size</label>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+          </div>
+          <div class="dropdown-group">
+            <label>#2 Colour</label>
+            <select>
+              <option>Colour</option>
+              <option>Black</option>
+              <option>Red</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        function selectOption(unit) {
+          // Reset all
+          document.querySelectorAll('.option-box').forEach(box => {
+            box.classList.remove('active');
+          });
+          document.querySelectorAll('.dropdowns').forEach(drop => {
+            drop.style.display = 'none';
+          });
+    
+          // Activate selected
+          if (unit === '2') {
+            document.getElementById('unit2').classList.add('active');
+            document.getElementById('dropdowns2').style.display = 'block';
+            document.getElementById('radio2').checked = true;
+          }
+        }
+      </script>
+  <div class="box" onclick="selectBox(1)">
+    <div class="left">
+      <input type="radio" name="unit" id="unit1">
+      <label for="unit1"><strong>3 Unit</strong></label>
+      <div class="discount">30% Off</div>
+    </div>
+    <div class="price">
+      <strong>$24.00 USD</strong><br>
+      <del>$24.00 USD</del>
+    </div>
+  </div>
+  
+  
+  <div class="footer">Free Delivery</div>
+  <div class="total">Total: $18.00 USD</div>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button class="btn">+ Add to Cart</button>
+  </div>
+  
+  <div class="powered">@ Powered by Pumper</div>
+</div>
+  
+</body>
+</html>
